@@ -28,8 +28,8 @@ const Application = () => {
   }
 
   return (
-    <div className="p-4 md:w-1/3 h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:scale-110 duration-500">
-      <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="course img"></img>
+    <div className="p-4 md m-1.5 h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:scale-110 duration-500">
+      <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/400x400" alt="course img"></img>
       <div>
         <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
           Applicant&apos;s Name: {applicant}
@@ -80,6 +80,8 @@ const ApplicationReview = () => {
         role="list"
         className="text-gray-600 body-font flex flex-wrap -m-4"
       >
+        <Application />
+        <Application />
         <Application />
         <Application />
         <Application />

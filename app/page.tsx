@@ -37,6 +37,9 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import About from "@/components/About";
 import Team from "@/components/Team";
+import Faq from "@/components/Faq";
+import Skills from "@/components/Skills";
+import Statistics from "@/components/Statistics";
 
 const Page = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -158,7 +161,7 @@ const Page = () => {
       </Drawer>
 
       <div className={styles.header}>
-        <Typography variant="h1" className={styles.tj1}>
+        <Typography variant="h1"className={styles.tj1}>
           Foreign Training Program
         </Typography>
         <Typography variant="h5" className={styles.subtitle}>
@@ -188,7 +191,8 @@ const Page = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.
           </Typography> */}
         </div>
-        <div id="faq" className={styles.section}>
+        {/* <Skills/> */}
+        {/* <div id="faq" className={styles.section}>
           <Typography variant="h4" className={styles.sectionHeading}>
             F.A.Q
           </Typography>
@@ -208,8 +212,8 @@ const Page = () => {
                 </Typography>
               </AccordionDetails>
             </Accordion>
-          ))}
-        </div>
+          ))} */}
+        {/* </div> */}
         <div id="team" className={styles.section}>
           <Typography variant="h4" className={styles.sectionHeading}>
             Team
@@ -225,6 +229,8 @@ const Page = () => {
             nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.
           </Typography>
         </div>
+        <Statistics/>
+        <Faq/>
         <div id="contactus" className={styles.section}>
           <Typography variant="h4" className={styles.sectionHeading}>
             Contact Us
