@@ -11,7 +11,7 @@ interface FaqProps {
 
 const Team: React.FC<FaqProps> = (props) => {
   return (
-    <div className={styles.bod}>
+    <div id="team" className={styles.bod}>
       <header className={styles.header}>
         <h1 className={styles.heading}>Meet Our Team</h1>
       </header>

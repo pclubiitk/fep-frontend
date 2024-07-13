@@ -8,7 +8,7 @@ import Contactus from "./contactus";
 import Statistics from "./Statistics";
 import Faq from "./team";
 import Image from "next/image";
-
+import Link from "next/link";
 const App: React.FC = () => {
   return (
     <div>
@@ -40,15 +40,15 @@ const Header: React.FC = ({}) => {
         <span className="navbar-title">IIT Kanpur</span>
       </div>
       <ul className="navbar-links">
-        <li className="navbar-link">HOME</li>
-        <li className="navbar-link">ABOUT</li>
-        <li className="navbar-link">EXPERTISE</li>
-        <li className="navbar-link">FAQ</li>
-        <li className="navbar-link">TEAM</li>
-        <li className="navbar-link">CONTACT</li>
+        <li className="navbar-link"><Link href="#hero">HOME</Link></li>
+        <li className="navbar-link"><Link href="#about">ABOUT</Link></li>
+        <li className="navbar-link"><Link href="#expertise-section">EXPERTISE</Link></li>
+        <li className="navbar-link"><Link href="#faq">FAQ</Link></li>
+        <li className="navbar-link"><Link href="#team">TEAM</Link></li>
+        <li className="navbar-link"><Link href="#contact">CONTACT</Link></li>
       </ul>
       <div className="navbar-right">
-        <button className="sign-in-button">Sign In</button>
+      <Link href="/auth/login"> <button className="sign-in-button">Sign In</button></Link>
       </div>
     </nav>
   );
