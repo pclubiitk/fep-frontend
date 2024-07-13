@@ -201,7 +201,7 @@ const HeroSection: React.FC = () => {
 const About: React.FC = () => {
   return (
     <section id="about">
-      <div style={{ textAlign: "center" }}>
+      <div  className="mapimage">
         <img
           src="map.png"
           alt="Map Image"

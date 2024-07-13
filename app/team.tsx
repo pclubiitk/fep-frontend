@@ -1,126 +1,55 @@
 import React from "react";
+
+type faq = {
+    question: string,
+    answer:string
+}
+
+function Faqs({question,answer}:faq) {
+    return (<div className="py-5">
+            <details className="group">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                    <span>{question}</span>
+                    <span className="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                <path d="M6 9l6 6 6-6"></path>
+                            </svg>
+                        </span>
+                </summary>
+                <p className="group-open:animate-fadeIn mt-3 text-neutral-600">{answer}
+                </p>
+            </details>
+        </div>
+        );
+};
+
 const Faq = () => {return (
-<div id="faq"
-    className="relative w-full bg-white px-6 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
+<div
+    className="relative bg-white px-6 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto max-w-screen-2xl sm:rounded-lg sm:px-10">
     <div className="mx-auto px-5">
         <div className="flex flex-col items-center">
             <h2 className="mt-5 text-center text-3xl font-bold tracking-tight md:text-5xl">FAQ</h2>
             <p className="mt-3 text-lg text-neutral-500 md:text-xl">Frequenty asked questions
-
             </p>
         </div>
-        <div className="mx-auto mt-8 grid max-w-xl divide-y divide-neutral-200">
-            <div className="py-5">
-                <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                        <span> How does the billing work?</span>
-                        <span className="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                    </summary>
-                    <p className="group-open:animate-fadeIn mt-3 text-neutral-600">Springerdata offers a variety of
-                        billing options, including monthly and annual subscription plans, as well as pay-as-you-go
-                        pricing for certain services. Payment is typically made through a credit card or other
-                        secure online payment method.
-                    </p>
-                </details>
-            </div>
-            <div className="py-5">
-                <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                        <span> Can I get a refund for my subscription?</span>
-                        <span className="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                    </summary>
-                    <p className="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a 30-day money-back
-                        guarantee for most of its subscription plans. If you are not satisfied with your
-                        subscription within the first 30 days, you can request a full refund. Refunds for
-                        subscriptions that have been active for longer than 30 days may be considered on a
-                        case-by-case basis.
-                    </p>
-                </details>
-            </div>
-            <div className="py-5">
-                <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                        <span> How do I cancel my subscription?</span>
-                        <span className="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                    </summary>
-                    <p className="group-open:animate-fadeIn mt-3 text-neutral-600">To cancel your subscription, you can
-                        log in to your account and navigate to the subscription management page. From there, you
-                        should be able to cancel your subscription and stop future billing.
-                    </p>
-                </details>
-            </div>
-            <div className="py-5">
-                <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                        <span> Is there a free trial?</span>
-                        <span className="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                    </summary>
-                    <p className="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a free trial of our software
-                        for a limited time. During the trial period, you will have access to a limited set of
-                        features and functionality, but you will not be charged.
-                    </p>
-                </details>
-            </div>
-            <div className="py-5">
-                <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                        <span> How do I contact support?</span>
-                        <span className="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                    </summary>
-                    <p className="group-open:animate-fadeIn mt-3 text-neutral-600">If you need help with our platform or
-                        have any other questions, you can contact the company's support team by submitting a support
-                        request through the website or by emailing support@ourwebsite.com.
-                    </p>
-                </details>
-            </div>
-            <div className="py-5">
-                <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                        <span> Do you offer any discounts or promotions?</span>
-                        <span className="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                    </summary>
-                    <p className="group-open:animate-fadeIn mt-3 text-neutral-600">We may offer discounts or promotions
-                        from time to time. To stay up-to-date on the latest deals and special offers, you can sign
-                        up for the company's newsletter or follow it on social media.
-                    </p>
-                </details>
-            </div>
+        <div className="mx-auto mt-8 grid divide-y divide-neutral-200">
+        <Faqs question="What is the FEP portal?" answer="The FEP (Foreign Exposure Program) portal is an online platform designed to manage the application, selection, and monitoring processes for students participating in international Exposure programs, internships, and research projects." />
+
+<Faqs question="How do I access the FEP portal?" answer="You can access the FEP portal through a dedicated link provided on the IIT Kanpur website. You will need to log in using your institute-provided credentials." />
+<Faqs question="Who is eligible to apply for the FEP programs?" answer="The FEP programs are typically open to undergraduate, postgraduate, and doctoral students who meet specific academic and performance criteria. Eligibility requirements are detailed in each program listing on the portal." />
+<Faqs question="What documents are required for the application?" answer="Required documents usually include a resume, statement of purpose, academic transcripts, and recommendation letters. Specific requirements are listed in each program’s application guidelines on the portal." />
+<Faqs question="How can I track the status of my application?" answer="You can track the status of your application through the FEP portal. Notifications about your application status, interview schedules, and final selections will be communicated through the portal and via email." />
+<Faqs question="What happens after I submit my application?" answer="After submission, your application will be reviewed by faculty advisors and selection committees. If shortlisted, you may be called for an interview or additional assessments. Final selections are then communicated through the portal." />
+<Faqs question="Is there any financial support available for FEP programs?" answer="Yes, financial support such as scholarships or stipends may be available to cover expenses like travel, accommodation, and living costs. Details are provided in the program listings on the portal." />
+<Faqs question="What kind of pre-departure preparations are required?" answer="Pre-departure preparations include orientations on cultural training, travel arrangements, health and safety guidelines, and academic expectations. Necessary documentation, such as visas and travel insurance, must also be arranged." />
+<Faqs question="How do I submit progress reports during the program?" answer="You can submit progress reports and updates through the FEP portal. These reports are monitored by faculty advisors and program coordinators to ensure the program objectives are being met." />
+<Faqs question="What are the post-FEP requirements?" answer="Upon returning, you need to submit a detailed report on your experience, outlining the skills and knowledge gained. Additionally, you may be required to present your experiences in seminars or presentations organized by the institute." />
+<Faqs question="How can I connect with alumni of the FEP program?" answer="The FEP portal includes a section for alumni, allowing you to connect with past participants. This network provides valuable insights and opportunities for current and future participants." />
+<Faqs question="How can I provide feedback about the FEP portal and program?" answer="You can provide feedback through the FEP portal, helping the institute make improvements and enhance the experience for future participants." />
+<Faqs question="Who should I contact for support and assistance?" answer="Contact information for support and assistance is provided on the FEP portal. You can reach out to program coordinators or the helpdesk for any queries or issues." />
+
         </div>
     </div>
 </div>
