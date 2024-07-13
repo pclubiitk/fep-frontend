@@ -1,6 +1,6 @@
 import React from "react";
 const Faq = () => {return (
-<div
+<div id="faq"
     className="relative w-full bg-white px-6 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
     <div className="mx-auto px-5">
         <div className="flex flex-col items-center">
