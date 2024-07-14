@@ -1,0 +1,149 @@
+/*:root {
+    --color-bg1: rgb(108, 0, 162);
+    --color-bg2: rgb(8,17,82);
+    --color1: 18, 113, 255;
+    --color2: 221, 74, 255;
+    --color3: 100, 220, 255;
+    --color4: 200, 50, 50;
+    --color5: 180, 180, 50;
+    --color-interactive: 148, 100, 255;
+    --circle-size: 80%;
+    --blending: hard-light;
+}*/
+
+.bod {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+.header {
+    background-color: #000;
+    color: white;
+    padding: 30px 20px;
+    position: relative;
+    text-align: center;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.70;
+}
+
+.heading {
+   font-size: 3rem;
+   font-weight: 500;
+   font-style: bold;
+   border-bottom: 2px solid white;
+}
+
+.teamSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.teamMember {
+    text-align: center;
+   
+}
+
+.memberAvatar {
+    width: 15rem; /* Adjust the size as needed */
+    height: 15rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #ddd; /* Placeholder color for avatar */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+
+.iconContainer {
+    margin-top: 13px;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.icon {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    background-color: #fff; /* Background for icons */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    transition: transform 0.3s ease;
+    
+}
+
+
+
+.icon a {
+    color: #333;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+
+
+.memberInfo h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.8em;
+    border: black 10px;
+    color: #fff;
+}
+
+.memberInfo p {
+    margin: 0;
+    color: #fff;
+    font-size: 0.9em;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1024px) {
+    .teamSection {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .teamSection {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
+    }
+}
