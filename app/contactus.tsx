@@ -27,10 +27,10 @@ export default function ContactUs() {
                   />
                 </svg>
                 <a
-                  href="javascript:void(0)"
+                  href=" ug_anc@iitk.ac.in"
                   className="text-black text-sm ml-4"
                 >
-                  info@example.com
+                ug_anc@iitk.ac.in
                 </a>
               </li>
               <li className="flex items-center">
@@ -47,10 +47,10 @@ export default function ContactUs() {
                   ></path>
                 </svg>
                 <a
-                  href="javascript:void(0)"
+                  href="tel:+91-6307550041"
                   className="text-black text-sm ml-4"
                 >
-                  +158 996 888
+                +91-6307550041
                 </a>
               </li>
               <li className="flex items-center">
