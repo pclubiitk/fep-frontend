@@ -3,11 +3,11 @@ import "./css/tailwind.css";
 export default function ContactUs() {
   return (
     <>
-      <div id="contact" className="mt-6 w-full mx-auto bg-[#fcfcfb] rounded-lg">
+      <div id="contact" className="mt-6 w-full mx-auto bg-[#fcfcfb] rounded-lg contact_us">
         <div className="grid lg:grid-cols-2 items-center gap-14 sm:p-8 p-4 font-[sans-serif]">
           <div>
-            <h1 className="text-4xl font-bold text-black">Get in Touch</h1>
-            <p className="text-sm text-black-300 mt-4 leading-relaxed">
+            <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
+            <p className="text-sm text-white mt-4 leading-relaxed">
               Have some big idea or brand to develop and need help? Then reach
               out we&apos;d love to hear about your project and provide help.
             </p>
@@ -28,7 +28,7 @@ export default function ContactUs() {
                 </svg>
                 <a
                   href=" ug_anc@iitk.ac.in"
-                  className="text-black text-sm ml-4"
+                  className="text-white text-sm ml-4"
                 >
                 ug_anc@iitk.ac.in
                 </a>
@@ -48,7 +48,7 @@ export default function ContactUs() {
                 </svg>
                 <a
                   href="tel:+91-6307550041"
-                  className="text-black text-sm ml-4"
+                  className="text-white text-sm ml-4"
                 >
                 +91-6307550041
                 </a>
@@ -72,7 +72,7 @@ export default function ContactUs() {
                 </svg>
                 <a
                   href="javascript:void(0)"
-                  className="text-black text-sm ml-4"
+                  className="text-white text-sm ml-4"
                 >
                   123 Street 256 House
                 </a>
@@ -128,34 +128,34 @@ export default function ContactUs() {
             </ul>
           </div>
 
-          <div className="bg-gray-100 p-6 rounded-lg">
-            <p className="text-sm font-semibold text-black-800">
+          <div className="p-6 rounded-lg contact_form">
+            <p className="text-sm font-semibold text-white">
               I&apos;m interested in...
             </p>
             <form className="mt-8 space-y-4">
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full rounded-lg py-3 px-4 text-black-800 text-sm outline-[#a91079]"
+                className="w-full rounded-lg py-3 px-4 text-white text-sm outline-[#a91079] bg-black"
               />
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full rounded-lg py-3 px-4 text-black-800 text-sm outline-[#a91079]"
+                className="w-full rounded-lg py-3 px-4 text-white text-sm outline-[#a91079] bg-black"
               />
               <input
                 type="text"
                 placeholder="Subject"
-                className="w-full rounded-lg py-3 px-4 text-black-800 text-sm outline-[#a91079]"
+                className="w-full rounded-lg py-3 px-4 text-white text-sm outline-[#a91079] bg-black"
               />
               <textarea
                 placeholder="Message"
                 rows={6}
-                className="w-full rounded-lg px-4 text-black-800 text-sm pt-3 outline-[#a91079]"
+                className="w-full rounded-lg px-4 text-white text-sm pt-3 outline-[#a91079] bg-black"
               ></textarea>
               <button
                 type="button"
-                className="text-black bg-[#a91079] hover:bg-[#a91079e2] tracking-wide rounded-lg text-sm px-4 py-3 flex items-center justify-center w-full !mt-6"
+                className="text-black bg-[#d89d37] hover:bg-[#b7884ae2] tracking-wide rounded-lg text-sm px-4 py-3 flex items-center justify-center w-full !mt-6"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
