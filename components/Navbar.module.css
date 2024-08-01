@@ -1,119 +1,156 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(173,255,47,1) 100%);
-    padding: 0.5rem 1rem;
-    }
-    .brand {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    }
-    
-    .logo {
-    width: 24px;
-    height: 24px;
-    background-color: orange;
-    margin-right: 8px;
-    border-radius: 4px;
-    display: inline-block;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(0, 128, 0, 1) 0%, rgba(173, 255, 47, 1) 100%);
+  padding: 0.5rem 1rem;
+}
 
-    .links{
-        justify-content: space-between;
-    }
-    
-    .link {
-        display: inline-block;
-        justify-content: space-between; 
-        margin-bottom: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-        color: white;
-        text-decoration: none;
-        position: relative;
-        z-index: 10px;
-      }
-      
-      .link::after {
-        z-index: 10px;
-        content: '';
-        height: 3px;
-        width: 0%;
-        background: #ff004f;
-        position: absolute;
-        left: 0;
-        bottom: -3px; 
-        transition: 0.5s;
-      }
-      
-      .link:hover::after {
-        width: 100%;
-      }
-      
-    
-    .profile {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem;
-    border-radius: 30px;
-    }
-    
-    .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    }
-    
-    .userName {
-    color: #80cbc4;
-    font-weight: 500;
-    }
-    
-    .menuButton {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    }
-    
-    .dialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: white;
-    color: black;
-    width: 200px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    }
-    
-    .dialog a {
-    margin: 1rem 0;
-    text-decoration: none;
-    color: black;
-    }
-    
-    .closeButton {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    }
-    
-    /*done to make responsive */
-    @media (max-width: 768px) {
-    .links {
+.brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 4px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 0 10px;
+}
+
+.link::after {
+  content: '';
+  height: 3px;
+  width: 0%;
+  background: #ff004f;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  transition: 0.5s;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.userName {
+  color: #80cbc4;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: white;
+  color: black;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.profileDialog {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  color: black;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dialog a,
+.profileDialog a {
+  margin: 1rem 0;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.closeButton {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.profileCloseButton {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .links {
     display: none;
-    }
+  }
 
+  .userName {
+    display: none;
+  }
+
+  .profile {
+    padding: 0;
+  }
 }

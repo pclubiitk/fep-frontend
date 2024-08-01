@@ -1,14 +1,16 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import "./App.css";
 import Team from "./faq";
 import logo from "./iitklogo.png";
 import Contactus from "./contactus";
 import Statistics from "./Statistics";
+import whoami from "../callbacks/auth/student/whoami";
 import Faq from "./team";
 import Image from "next/image";
 import Link from "next/link";
+import useStore from "../store/store";
 const App: React.FC = () => {
   return (
     <div>
@@ -27,12 +29,42 @@ const App: React.FC = () => {
     </div>
   );
 };
-
 interface HeaderProps {
   handleSignInClick: () => void;
 }
-
 const Header: React.FC = ({}) => {
+  const { token, setToken } = useStore();
+  const [statusofuser,setStatus]=useState("Login");
+  const [loginlink,setLoginLink]=useState("/auth/login");
+  useEffect(() => {
+    const checklogin = async () => {
+      if (!token) {
+        return;
+      }
+      const res = await whoami.get(token);
+      console.log(res);
+      setStatus("Dashboard");
+      switch (res.role_id) {
+        case 1:
+          setLoginLink("/projects");
+          break;
+        case 2:
+          setLoginLink("/professor");
+          break;
+        case 101:
+          console.log("admin");
+          break;
+        case 100:
+          console.log("god");
+          break;
+        default:
+          setToken("");
+          setLoginLink("/auth/login");
+          break;
+      }
+    };
+    checklogin();
+  }, [setToken, token]);
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -48,7 +80,7 @@ const Header: React.FC = ({}) => {
         <li className="navbar-link"><Link href="#contact">CONTACT</Link></li>
       </ul>
       <div className="navbar-right">
-      <Link href="/auth/login"> <button className="sign-in-button">Sign In</button></Link>
+      <Link href={loginlink}> <button className="sign-in-button">{statusofuser}</button></Link>
       </div>
     </nav>
   );
@@ -115,73 +147,36 @@ const Testimonials: React.FC = () => {
 };
 
 const HeroSection: React.FC = () => {
+  const { token, setToken } = useStore();
+  const [loginlink,setLoginLink]=useState("/auth/login");
   useEffect(() => {
-    const textContainer = document.querySelector(".animated-text");
-    const texts = ["to provide international exposure."];
-    let textIndex = 0;
-    let charIndex = 0;
-    let currentText = "";
-    let isDeleting = false;
-    let isRewriting = false;
-    let deleteStartIndex = 0;
-
-    function type() {
-      const currentString = texts[textIndex];
-      const words = currentString.split(" ");
-
-      if (!isDeleting && !isRewriting) {
-        if (charIndex < currentString.length) {
-          currentText += currentString.charAt(charIndex);
-          charIndex++;
-          textContainer.textContent = currentText;
-          setTimeout(type, 100);
-        } else {
-          isDeleting = true;
-          deleteStartIndex = currentText.lastIndexOf(words.slice(-3).join(" "));
-          setTimeout(type, 2000);
-        }
-      } else if (isDeleting && !isRewriting) {
-        if (currentText.length > deleteStartIndex) {
-          currentText = currentText.slice(0, -1);
-          textContainer.textContent = currentText;
-          setTimeout(type, 50);
-        } else {
-          isRewriting = true;
-          charIndex = deleteStartIndex;
-          setTimeout(type, 1000);
-        }
-      } else if (isRewriting) {
-        if (charIndex < currentString.length) {
-          currentText += currentString.charAt(charIndex);
-          charIndex++;
-          textContainer.textContent = currentText;
-          setTimeout(type, 100);
-        } else {
-          isDeleting = false;
-          isRewriting = false;
-          textIndex = (textIndex + 1) % texts.length;
-          currentText = "";
-          charIndex = 0;
-          setTimeout(type, 2000);
-        }
+    const checklogin = async () => {
+      if (!token) {
+        return;
       }
-    }
-
-    type();
-
-    const handleScroll = () => {
-      const heroSection = document.querySelector("#hero");
-      const scrollPosition = window.pageYOffset;
-      heroSection.style.backgroundPositionY = `${-scrollPosition * 0.5}px`; // Adjust the factor for the desired smoothness
+      const res = await whoami.get(token);
+      console.log(res);
+      switch (res.role_id) {
+        case 1:
+          setLoginLink("/projects");
+          break;
+        case 2:
+          setLoginLink("/professor");
+          break;
+        case 101:
+          console.log("admin");
+          break;
+        case 100:
+          console.log("god");
+          break;
+        default:
+          setToken("");
+          setLoginLink("/auth/login");
+          break;
+      }
     };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+    checklogin();
+  }, [setToken, token]);
   return (
     <section id="hero">
       <div className="hero-content">
@@ -190,10 +185,8 @@ const HeroSection: React.FC = () => {
           Explore new opportunities and expand your horizons with our unique
           programs designed
         </div>
-        <div className="animated-text"></div>
-        <button className="btn">Apply now</button>
+        <div className="animated-text">to provide international exposure</div>
       </div>
-      <Testimonials />
     </section>
   );
 };
@@ -218,65 +211,7 @@ const About: React.FC = () => {
     </section>
   );
 };
-
 const ExpertiseSection: React.FC = () => {
-  useEffect(() => {
-    const textContainer2 = document.querySelector(".animated-text2");
-    const texts2 = ["academics and its unparalleled faculty."];
-    let textIndex2 = 0;
-    let charIndex2 = 0;
-    let currentText2 = "";
-    let isDeleting2 = false;
-    let isRewriting2 = false;
-    let deleteStartIndex2 = 0;
-
-    function type2() {
-      const currentString2 = texts2[textIndex2];
-      const words2 = currentString2.split(" ");
-
-      if (!isDeleting2 && !isRewriting2) {
-        if (charIndex2 < currentString2.length) {
-          currentText2 += currentString2.charAt(charIndex2);
-          charIndex2++;
-          textContainer2.textContent = currentText2;
-          setTimeout(type2, 100);
-        } else {
-          isDeleting2 = true;
-          deleteStartIndex2 = currentText2.lastIndexOf(
-            words2.slice(-3).join(" ")
-          );
-          setTimeout(type2, 2000);
-        }
-      } else if (isDeleting2 && !isRewriting2) {
-        if (currentText2.length > deleteStartIndex2) {
-          currentText2 = currentText2.slice(0, -1);
-          textContainer2.textContent = currentText2;
-          setTimeout(type2, 50);
-        } else {
-          isRewriting2 = true;
-          charIndex2 = deleteStartIndex2;
-          setTimeout(type2, 1000);
-        }
-      } else if (isRewriting2) {
-        if (charIndex2 < currentString2.length) {
-          currentText2 += currentString2.charAt(charIndex2);
-          charIndex2++;
-          textContainer2.textContent = currentText2;
-          setTimeout(type2, 100);
-        } else {
-          isDeleting2 = false;
-          isRewriting2 = false;
-          textIndex2 = (textIndex2 + 1) % texts2.length;
-          currentText2 = "";
-          charIndex2 = 0;
-          setTimeout(type2, 2000);
-        }
-      }
-    }
-
-    type2();
-  }, []);
-
   return (
     <section id="expertise-section">
       <div className="content">
@@ -286,7 +221,7 @@ const ExpertiseSection: React.FC = () => {
             and 15 Postgraduate departments, each having a great talent pool
             honed to suit the needs of academia by our excellent
           </p>
-          <p className="animated-text2"></p>
+          <p className="animated-text2">academics and its unparalleled faculty.</p>
         </div>
         <div className="departments">
           <p>The departments are:</p>
@@ -317,7 +252,6 @@ const ExpertiseSection: React.FC = () => {
     </section>
   );
 };
-
 const Programs: React.FC = () => {
   return (
     <section id="programs">
@@ -348,7 +282,6 @@ const Programs: React.FC = () => {
     </section>
   );
 };
-
 const Footer: React.FC = () => {
   return (
     <footer>
@@ -356,5 +289,4 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
 export default App;

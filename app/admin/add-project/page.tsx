@@ -42,6 +42,7 @@ export default function Home() {
     e.preventDefault();
 
     const projectData = {
+      prof_id:1,
       project_name: formData.projname,
       project_details: formData.about,
       project_mode: formData.mode,
@@ -58,7 +59,7 @@ export default function Home() {
     try {
       // hardcode
       const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWtnb2RAaWl0ay5hYy5pbiIsInJvbGVfaWQiOjEwMCwiZXhwIjoxNzIyNTU3Nzg0LCJpYXQiOjE3MjIyNTc3ODQsImlzcyI6InJhcyJ9.kFo0mm6HLJj-mvNcuQA1K-SrOBmCPj6zI00rvP6aGqI";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWtzaGF0MjNAaWl0ay5hYy5pbiIsInJvbGVfaWQiOjEwMCwiZXhwIjoxNzIyNjY3MjAyLCJpYXQiOjE3MjIzNjcyMDIsImlzcyI6InJhcyJ9.MQw_c53aye5aV_O38UANkOF66E3J6obgI8TV97QeFIk";
       const response = await requestProject.post(token, projectData);
       console.log("Project created successfully:", response.data);
       // Handle success (e.g., show a success message, redirect, etc.)

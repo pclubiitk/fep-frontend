@@ -6,7 +6,7 @@ type faq = {
 }
 
 function Faqs({question,answer}:faq) {
-    return (<div className="py-5">
+    return (<div className="py-5" id="faq">
             <details className="group">
                 <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
                     <span>{question}</span>

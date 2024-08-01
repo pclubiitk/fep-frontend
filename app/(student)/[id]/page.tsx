@@ -109,12 +109,12 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
           </div>
           <div className={styles.content}>
             <h2 className={styles.subHeading}>{projectData.university_name}</h2>
-            <p>
+            {/* <p>
               {isExpanded ? projectData.universityDescription : `${projectData.universityDescription.substring(0, 100)}...`}
               <button onClick={toggleReadMore} className={styles.readMoreButton}>
                 {isExpanded ? 'Read Less' : 'Read More'}
               </button>
-            </p>
+            </p> */}
             <h3 id="otherInformation" className={styles.subHeading}>Other Information</h3>
             <div className={styles.otherInformation}>
               <div className={styles.otherInfoTab}>
@@ -170,9 +170,9 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
                   />
                 </LayersControl.BaseLayer>
               </LayersControl>
-              <Marker position={projectData.coordinates}>
+              {/* <Marker position={projectData.coordinates}>
                 <Popup>{projectData.university_name}</Popup>
-              </Marker>
+              </Marker> */}
               <LocateControl />
               <ZoomControl position="bottomright" />
             </MapContainer>
