@@ -1,32 +1,40 @@
+/* applications.module.css */
 .container {
-    padding: 20px;
-  }
-  
-  .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .buttonContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-  }
-  
-  .title {
-    margin: 0;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  .projectsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
-  }
-  
+  padding: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.title {
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.appliedButton {
+  position: absolute;
+  right: 0;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.projectList {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
